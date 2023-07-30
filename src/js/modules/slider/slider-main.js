@@ -1,8 +1,8 @@
 import Slider from "./slider";
 
 export default class MainSlider extends Slider {
-  constructor(page, btns) {
-    super(page, btns);
+  constructor(btns) {
+    super(btns);
   }
 
   showSlides(n) {
@@ -13,9 +13,11 @@ export default class MainSlider extends Slider {
     if (n < 1) {
       this.slideIndex = this.slides.length;
     }
+
     try {
       this.hanson.style.opacity = "0";
-      if (n === 3) {
+
+      if (n == 3) {
         this.hanson.classList.add("animated");
         setTimeout(() => {
           this.hanson.style.opacity = "1";
